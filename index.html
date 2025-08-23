@@ -18,30 +18,6 @@
       scroll-behavior: smooth;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px 20px;
-      text-align: left;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ffd700;
-    }
-
     /* Hero Section */
     header {
       display: flex;
@@ -70,13 +46,16 @@
       display: block;
     }
 
-    /* Hero Title */
-    .hero-title {
-      margin-top: 20px;
-      font-size: 1.6rem;
+    /* Scroll Down Text */
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.2);
       font-weight: bold;
-      color: #f3e8d5;
-      text-align: center;
+      letter-spacing: 2px;
     }
 
     /* Lottie animation container */
@@ -94,7 +73,7 @@
     }
 
     section {
-      min-height: 110vh;
+      min-height: 100vh;
       padding: 80px 20px;
       display: flex;
       justify-content: center;
@@ -145,14 +124,9 @@
 
     /* Responsive Styles */
     @media (max-width: 768px) {
-      nav a {
-        font-size: 16px;
-        margin: 0 10px;
-      }
-
       #lottie-animation {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
       }
 
       h1,
@@ -164,25 +138,20 @@
         font-size: 16px;
       }
 
-      .hero-title {
-        font-size: 1.3rem;
+      .scroll-down {
+        font-size: 1.2rem;
       }
     }
 
     /* Mobile-specific background */
     @media (max-width: 600px) {
       .hero-image {
-        content: url('NanoPlasMINTMB.jpg');
+        content: url('NanoPlasMINTMB.jpeg');
       }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#contact">Contact Us</a>
-  </nav>
 
   <!-- Hero Section -->
   <header>
@@ -191,12 +160,10 @@
       <div id="lottie-animation"></div>
 
       <!-- Background image -->
-      <img src="NanoPlasMINTN.jpg" alt="Self-Driving Lab" class="hero-image">
+      <img src="NanoPlasMINT.jpeg" alt="Self-Driving Lab" class="hero-image">
 
-      <!-- Hero Title -->
-      <div class="hero-title">
-        Nano-Plasmonic particle synthesis through Machine Intelligence-driven Nanoparticle Tuning
-      </div>
+      <!-- Scroll Down Text -->
+      <div class="scroll-down">SCROLL DOWN</div>
     </div>
   </header>
 
