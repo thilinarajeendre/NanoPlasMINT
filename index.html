@@ -8,28 +8,136 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background: #0a1f33;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    header {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       min-height: 100vh;
-      background: #0a1f33;
+      text-align: center;
     }
+
     .container {
       max-width: 1000px;
       width: 95%;
       padding: 10px;
     }
+
     img {
       width: 100%;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 0;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 80px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      color: white; /* ensure text is white */
+    }
+
+    /* Transparent overlay effect */
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      z-index: 0;
+    }
+
+    section h2, section p {
+      position: relative;
+      z-index: 1;
+    }
+
+    #about {
+      background: url('NanoPlasMINT.jpeg') no-repeat center center/cover;
+    }
+
+    #contact {
+      background: linear-gradient(to bottom right, #102a44, #16324f);
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 800px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="NanoPlasMINT.jpeg" alt="Self-Driving Lab for Autonomous Closed-Loop Synthesis of Gold Nanoparticles">
-  </div>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <div class="container">
+      <img src="NanoPlasMINT.jpeg" alt="Self-Driving Lab for Autonomous Closed-Loop Synthesis of Gold Nanoparticles">
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      This project focuses on developing a Self-Driving Lab (SDL) for the autonomous closed-loop synthesis of gold nanoparticles. 
+      By integrating robotics, machine learning, and automation, we aim to accelerate materials discovery 
+      and enable scalable nanoparticle synthesis with precision and reproducibility.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>
+      For inquiries and collaborations, please reach out via email at 
+      <strong>research.lab@example.com</strong>.  
+      We welcome partnerships in materials science, nanotechnology, and self-driving lab technologies.
+    </p>
+  </section>
 </body>
 </html>
