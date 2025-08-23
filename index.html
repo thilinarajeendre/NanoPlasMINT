@@ -20,12 +20,14 @@
       flex-direction: column;
       min-height: 100vh;
       text-align: center;
+      position: relative; /* so we can layer elements */
     }
 
     .container {
       max-width: 1000px;
       width: 95%;
       padding: 10px;
+      position: relative;
     }
 
     img {
@@ -33,6 +35,18 @@
       height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Lottie animation container */
+    #lottie-animation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      z-index: 2; /* stays above the image */
+      pointer-events: none; /* animation doesn’t block clicks */
     }
 
     nav {
@@ -69,7 +83,6 @@
       color: white;
     }
 
-    /* Transparent overlay effect */
     section::before {
       content: "";
       position: absolute;
@@ -87,12 +100,10 @@
       z-index: 1;
     }
 
-    /* About section: plain black background */
     #about {
       background: #000000;
     }
 
-    /* Contact section: gradient background */
     #contact {
       background: linear-gradient(to bottom right, #102a44, #16324f);
     }
@@ -118,6 +129,10 @@
   <!-- Hero Section -->
   <header>
     <div class="container">
+      <!-- JSON animation overlay -->
+      <div id="lottie-animation"></div>
+      
+      <!-- Background image -->
       <img src="NanoPlasMINT.jpeg" alt="Self-Driving Lab for Autonomous Closed-Loop Synthesis of Gold Nanoparticles">
     </div>
   </header>
@@ -141,5 +156,18 @@
       We welcome partnerships in materials science, nanotechnology, and self-driving lab technologies.
     </p>
   </section>
+
+  <!-- Lottie Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+  <script>
+    // Load Lottie animation
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'RotatingGem.json' // <-- using your animation file
+    });
+  </script>
 </body>
 </html>
