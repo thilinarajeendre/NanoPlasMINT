@@ -5,48 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Self-Driving Lab - Gold Nanoparticles</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       background: #0a1f33;
       color: white;
       scroll-behavior: smooth;
-    }
-
-    header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
-      position: relative; /* so we can layer elements */
-    }
-
-    .container {
-      max-width: 1000px;
-      width: 95%;
-      padding: 10px;
-      position: relative;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Lottie animation container */
-    #lottie-animation {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 300px;
-      height: 300px;
-      z-index: 2; /* stays above the image */
-      pointer-events: none; /* animation doesn’t block clicks */
     }
 
     nav {
@@ -69,6 +38,48 @@
 
     nav a:hover {
       color: #ffd700;
+    }
+
+    /* Hero Section */
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 95%;
+      padding: 10px;
+      position: relative;
+    }
+
+    /* Background Image */
+    .hero-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      display: block;
+    }
+
+    /* Lottie animation container */
+    #lottie-animation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      max-width: 80vw;
+      max-height: 80vw;
+      z-index: 2;
+      pointer-events: none;
     }
 
     section {
@@ -95,7 +106,8 @@
       z-index: 0;
     }
 
-    section h2, section p {
+    section h2,
+    section p {
       position: relative;
       z-index: 1;
     }
@@ -108,14 +120,45 @@
       background: linear-gradient(to bottom right, #102a44, #16324f);
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       margin-bottom: 20px;
+      font-size: 2rem;
     }
 
     p {
       max-width: 800px;
       font-size: 18px;
       line-height: 1.6;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav a {
+        font-size: 16px;
+        margin: 0 10px;
+      }
+
+      #lottie-animation {
+        width: 200px;
+        height: 200px;
+      }
+
+      h1,
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    /* Mobile-specific background */
+    @media (max-width: 600px) {
+      .hero-image {
+        content: url('NanoPlasMINTMB.jpeg');
+      }
     }
   </style>
 </head>
@@ -131,9 +174,9 @@
     <div class="container">
       <!-- JSON animation overlay -->
       <div id="lottie-animation"></div>
-      
+
       <!-- Background image -->
-      <img src="NanoPlasMINTN.jpg" alt="Self-Driving Lab for Autonomous Closed-Loop Synthesis of Gold Nanoparticles">
+      <img src="NanoPlasMINTN.jpeg" alt="Self-Driving Lab" class="hero-image">
     </div>
   </header>
 
@@ -141,8 +184,8 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      This project focuses on developing a Self-Driving Lab (SDL) for the autonomous closed-loop synthesis of gold nanoparticles. 
-      By integrating robotics, machine learning, and automation, we aim to accelerate materials discovery 
+      This project focuses on developing a Self-Driving Lab (SDL) for the autonomous closed-loop synthesis of gold nanoparticles.
+      By integrating robotics, machine learning, and automation, we aim to accelerate materials discovery
       and enable scalable nanoparticle synthesis with precision and reproducibility.
     </p>
   </section>
@@ -151,8 +194,8 @@
   <section id="contact">
     <h2>Contact Us</h2>
     <p>
-      For inquiries and collaborations, please reach out via email at 
-      <strong>research.lab@example.com</strong>.  
+      For inquiries and collaborations, please reach out via email at
+      <strong>research.lab@example.com</strong>.
       We welcome partnerships in materials science, nanotechnology, and self-driving lab technologies.
     </p>
   </section>
@@ -160,13 +203,12 @@
   <!-- Lottie Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
   <script>
-    // Load Lottie animation
     lottie.loadAnimation({
       container: document.getElementById('lottie-animation'),
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: 'https://raw.githubusercontent.com/thilinarajeendre/NanoPlasMINT/main/RotatingGem.json' // <-- using your animation file
+      path: 'https://raw.githubusercontent.com/thilinarajeendre/NanoPlasMINT/main/RotatingGem.json'
     });
   </script>
 </body>
