@@ -46,16 +46,21 @@
       display: block;
     }
 
-    /* Scroll Down Text */
-    .scroll-down {
+    /* Scroll Down Arrow */
+    .scroll-arrow {
       position: absolute;
-      bottom: 30px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 1.5rem;
-      color: rgba(255, 255, 255, 0.2);
-      font-weight: bold;
-      letter-spacing: 2px;
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.8);
+      animation: zoomInOut 1.5s infinite ease-in-out;
+    }
+
+    @keyframes zoomInOut {
+      0% { transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.2); }
+      100% { transform: translateX(-50%) scale(1); }
     }
 
     /* Lottie animation container */
@@ -138,15 +143,15 @@
         font-size: 16px;
       }
 
-      .scroll-down {
-        font-size: 1.2rem;
+      .scroll-arrow {
+        font-size: 1.5rem;
       }
     }
 
     /* Mobile-specific background */
     @media (max-width: 600px) {
       .hero-image {
-        content: url('NanoPlasMINTMB.jpeg');
+        content: url('NanoPlasMINTMB.jpg');
       }
     }
   </style>
@@ -160,30 +165,29 @@
       <div id="lottie-animation"></div>
 
       <!-- Background image -->
-      <img src="NanoPlasMINT.jpeg" alt="Self-Driving Lab" class="hero-image">
+      <img src="NanoPlasMINT.jpg" alt="Self-Driving Lab" class="hero-image">
 
-      <!-- Scroll Down Text -->
-      <div class="scroll-down">SCROLL DOWN</div>
+      <!-- Scroll Down Arrow -->
+      <div class="scroll-arrow">&#8595;</div>
     </div>
   </header>
 
   <!-- About Section -->
   <section id="about">
-    <h2>About</h2>
+    <h2>Promote Open-Source Development</h2>
     <p>
-      This project focuses on developing a Self-Driving Lab (SDL) for the autonomous closed-loop synthesis of gold nanoparticles.
-      By integrating robotics, machine learning, and automation, we aim to accelerate materials discovery
-      and enable scalable nanoparticle synthesis with precision and reproducibility.
+      We promote open-source development and reproducibility in experimental workflows, fostering collaborative research
+      and transparent innovation. Outcomes of this project will be published in open-access journals, with the applicant ensuring
+      that all related data, codes, and resources are made publicly available through a dedicated repository.
     </p>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact Us</h2>
+    <h2>Sharing Platform</h2>
     <p>
-      For inquiries and collaborations, please reach out via email at
-      <strong>research.lab@example.com</strong>.
-      We welcome partnerships in materials science, nanotechnology, and self-driving lab technologies.
+      This is the platform to share data, codes, and information about this project. Our commitment ensures open access to all materials
+      and encourages collaboration across the research community.
     </p>
   </section>
 
