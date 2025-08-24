@@ -127,14 +127,21 @@
       line-height: 1.6;
     }
 
-    /* Buttons Section */
+    /* Buttons Section - Sticky */
     .buttons-container {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin: 40px 0;
-      z-index: 1;
-      position: relative;
+      background: rgba(10, 31, 51, 0.85);
+      padding: 12px 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      backdrop-filter: blur(6px);
     }
 
     .btn {
@@ -153,7 +160,8 @@
     .btn:hover {
       background: #f3e8d5;
       color: #16324f;
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(243, 232, 213, 0.6);
     }
 
     /* Responsive Styles */
@@ -178,11 +186,12 @@
 
       .buttons-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
+        padding: 15px;
       }
 
       .btn {
-        width: 80%;
+        width: 220px;
         margin: 0 auto;
       }
     }
@@ -215,7 +224,7 @@
   <section id="about">
     <h2>Nano-Plasmonic particle synthesis through Machine Intelligence-driven Nanoparticle Tuning</h2>
     <p>
-      Revolutionizing the synthesis of plasmonic nanoparticles by combining autonomous fluidic experimentation 
+      Revolutionize the synthesis of gold nanoparticles by combining autonomous fluidic experimentation 
       with machine learning–driven closed-loop optimization.
     </p>
   </section>
@@ -225,7 +234,9 @@
     <h2>Data Sharing</h2>
     <p>
       This platform serves as a centralized hub for disseminating data, code, and comprehensive information 
-      related to this project.
+      related to this project. Our commitment lies in ensuring unrestricted access to all resources, fostering 
+      an open-science ecosystem that promotes transparency, reproducibility, and seamless collaboration within 
+      the global research community.
     </p>
   </section>
 
@@ -233,7 +244,7 @@
   <div class="buttons-container">
     <a href="https://example.com/publications" target="_blank" class="btn">Publications</a>
     <a href="https://example.com/codes" target="_blank" class="btn">Codes</a>
-    <a href="https://example.com/hardware" target="_blank" class="btn">Hardware</a>
+    <a href="https://example.com/hardware" target="_blank" class="btn">Data</a>
   </div>
 
   <!-- Lottie Library -->
