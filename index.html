@@ -127,6 +127,35 @@
       line-height: 1.6;
     }
 
+    /* Buttons Section */
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+      z-index: 1;
+      position: relative;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: #16324f;
+      border: 2px solid #f3e8d5;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #f3e8d5;
+      color: #16324f;
+      transform: scale(1.05);
+    }
+
     /* Responsive Styles */
     @media (max-width: 768px) {
       #lottie-animation {
@@ -145,6 +174,16 @@
 
       .scroll-arrow {
         font-size: 1.5rem;
+      }
+
+      .buttons-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .btn {
+        width: 80%;
+        margin: 0 auto;
       }
     }
 
@@ -176,7 +215,7 @@
   <section id="about">
     <h2>Nano-Plasmonic particle synthesis through Machine Intelligence-driven Nanoparticle Tuning</h2>
     <p>
-      Revolutionize the synthesis of gold nanoparticles by combining autonomous fluidic experimentation 
+      Revolutionizing the synthesis of plasmonic nanoparticles by combining autonomous fluidic experimentation 
       with machine learning–driven closed-loop optimization.
     </p>
   </section>
@@ -186,11 +225,16 @@
     <h2>Data Sharing</h2>
     <p>
       This platform serves as a centralized hub for disseminating data, code, and comprehensive information 
-      related to this project. Our commitment lies in ensuring unrestricted access to all resources, fostering 
-      an open-science ecosystem that promotes transparency, reproducibility, and seamless collaboration within 
-      the global research community.
+      related to this project.
     </p>
   </section>
+
+  <!-- Buttons Section -->
+  <div class="buttons-container">
+    <a href="https://example.com/publications" target="_blank" class="btn">Publications</a>
+    <a href="https://example.com/codes" target="_blank" class="btn">Codes</a>
+    <a href="https://example.com/hardware" target="_blank" class="btn">Hardware</a>
+  </div>
 
   <!-- Lottie Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
