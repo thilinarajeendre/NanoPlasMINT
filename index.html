@@ -55,6 +55,7 @@
       font-size: 2rem;
       color: rgba(255, 255, 255, 0.8);
       animation: zoomInOut 1.5s infinite ease-in-out;
+      cursor: pointer;
     }
 
     @keyframes zoomInOut {
@@ -127,7 +128,7 @@
       line-height: 1.6;
     }
 
-    /* Buttons Section - Sticky */
+    /* Buttons Section - Sticky Floating Bar */
     .buttons-container {
       position: fixed;
       bottom: 20px;
@@ -135,9 +136,9 @@
       transform: translateX(-50%);
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 16px;
       background: rgba(10, 31, 51, 0.85);
-      padding: 12px 20px;
+      padding: 12px 18px;
       border-radius: 14px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
       z-index: 1000;
@@ -145,8 +146,8 @@
     }
 
     .btn {
-      padding: 12px 24px;
-      font-size: 18px;
+      padding: 10px 20px;
+      font-size: 16px;
       font-weight: bold;
       color: #fff;
       background: #16324f;
@@ -155,6 +156,7 @@
       cursor: pointer;
       transition: all 0.3s ease-in-out;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .btn:hover {
@@ -184,15 +186,16 @@
         font-size: 1.5rem;
       }
 
+      /* Keep buttons horizontal on mobile */
       .buttons-container {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
-        padding: 15px;
+        padding: 10px 14px;
       }
 
       .btn {
-        width: 220px;
-        margin: 0 auto;
+        padding: 8px 12px;
+        font-size: 14px;
       }
     }
 
@@ -216,7 +219,7 @@
       <img src="NanoPlasMINTN.jpg" alt="Self-Driving Lab" class="hero-image">
 
       <!-- Scroll Down Arrow -->
-      <div class="scroll-arrow">&#8595;</div>
+      <div class="scroll-arrow" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">&#8595;</div>
     </div>
   </header>
 
